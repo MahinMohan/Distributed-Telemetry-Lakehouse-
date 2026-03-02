@@ -73,21 +73,44 @@ Example analytics:
 ---
 
 ## Repository Structure
-telemetry_lakehouse/
-│── README.md
-│── ingestion/
-│ └── cpp/
-│ └── main.cpp
-│── streaming/
-│ └── flink_job.py
-│── dashboard/
-│ └── streamlit_app.py
-│── lakehouse/
-│ └── trino/
-│ └── schema.sql
-└── infra/
-└── docker/
-└── Dockerfile
+Distributed-Telemetry-Lakehouse-/
+  README.md
+
+  ingestion/
+    cpp/
+      telemetry_ingest.cpp
+      CMakeLists.txt
+      Dockerfile
+      run_local.sh
+
+  streaming/
+    flink/
+      flink_job.py
+      requirements.txt
+      Dockerfile
+      conf/
+        flink-conf.yaml
+
+  lakehouse/
+    trino/
+      Dockerfile
+      entrypoint.sh
+    sql/
+      schema.sql
+
+  dashboard/
+    streamlit_app.py
+    requirements.txt
+    Dockerfile
+
+  infra/
+    docker/
+      docker-compose.yml
+      .env.example
+
+  scripts/
+    bootstrap_topics.sh
+    smoke_test.sh
 
 
 ---
