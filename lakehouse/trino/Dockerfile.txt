@@ -1,0 +1,3 @@
+FROM trinodb/trino:443
+
+COPY etc /etc/trino
